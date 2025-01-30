@@ -26,7 +26,7 @@ class MainActivity : AppCompatActivity() {
         val calculateButton: Button = findViewById(R.id.btnCalcular)
         val imcTextView: TextView = findViewById(R.id.textView3)
         val rangeTextView: TextView = findViewById(R.id.textView4)
-        val avatar: ImageView = findViewById(R.id.imageView)
+
 
         calculateButton.setOnClickListener {
             val weightValue = weight.text.toString().toFloatOrNull()
@@ -34,7 +34,7 @@ class MainActivity : AppCompatActivity() {
 
             if (weightValue != null && heightValue != null && heightValue > 0) {
                 val imc = weightValue / (heightValue * heightValue)
-                //imcTextView.text = "IMC: %.2f".format(imc)
+                imcTextView.text = "IMC: %.2f".format(imc)
 
                 when {
                     imc < 18.5 -> {
